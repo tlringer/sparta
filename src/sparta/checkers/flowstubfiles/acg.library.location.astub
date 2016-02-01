@@ -1,0 +1,7 @@
+package com.acg.lib.impl;
+// TODO can do this later, only need if we don't want to annotate, we should annotate for now
+// TODO parameterization inference is wrong anyways
+public final class LocationACG extends PermanentAccessACG<Location> implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+    @InferParameterizedPermission(value=ACG, param=0, isA=source)
+    Location getResource() throws ACGResourceAccessException;
+}

@@ -29,6 +29,11 @@ public class FlowPermissionString {
     public static final String PHONE_NUMBER = "PHONE_NUMBER";
     public static final String SHARED_PREFERENCES = "SHARED_PREFERENCES";
     public static final String ACCELEROMETER = "ACCELEROMETER";
+
+    /**
+     * Access control gadget permissions
+     */
+    public static final String ACG = "ACG";
     
     /**
      * The following permissions are temporary and implemented now in a simple
