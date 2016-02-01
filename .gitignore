@@ -18,6 +18,10 @@ tags
 .externalToolBuilders
 .settings
 dot_files
+.idea/
+sparta.iml
+tools/tools.iml
+annotated-intent-receivers/annotated-intent-receivers.iml
 
 
 missingAPI.astub
