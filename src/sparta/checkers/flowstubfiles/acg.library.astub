@@ -1,0 +1,7 @@
+package com.acg.lib.impl;
+
+public final class LocationACG extends PermanentAccessACG<Location> implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+
+    @Source(value = "ACG(location)")
+    public Location getResource() throws ACGResourceAccessException;
+}

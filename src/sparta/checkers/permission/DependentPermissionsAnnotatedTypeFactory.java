@@ -148,7 +148,7 @@ public class DependentPermissionsAnnotatedTypeFactory extends BaseAnnotatedTypeF
         contentURIPatternList.add(Pair.of("^content://downloads/all_downloads/.*", "grant-uri-permission"));
         contentURIPatternList.add(Pair.of("^content://downloads/all_downloads.*", "android.permission.ACCESS_ALL_DOWNLOADS"));
         contentURIPatternList.add(Pair.of("^content://downloads/all_downloads.*", "android.permission.ACCESS_ALL_DOWNLOADS"));
-        contentURIPatternList.add(Pair.of("^content://downloads/download.*", "android.permission.INTERNET"));
+        contentURIPatternList.add(Pair.of("^content://downloads/download.*", "android.permission.   INTERNET"));
         contentURIPatternList.add(Pair.of("^content://downloads/download.*", "android.permission.INTERNET"));
         contentURIPatternList.add(Pair.of("^content://downloads/my_downloads.*", "android.permission.INTERNET"));
         contentURIPatternList.add(Pair.of("^content://downloads/my_downloads.*", "android.permission.INTERNET"));

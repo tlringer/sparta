@@ -1,0 +1,10 @@
+package com.acg.lib.model;
+
+public final class Location {
+
+    @Source(value = "ACG(location)")
+    public double getLatitude();
+
+    @Source(value = "ACG(location)")
+    public double getLongitude();
+}
