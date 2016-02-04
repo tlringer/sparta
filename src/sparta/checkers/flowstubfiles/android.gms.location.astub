@@ -1,0 +1,6 @@
+package com.google.android.gms.location;
+
+interface FusedLocationProviderApi {
+    @Source({ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION})
+    Location getLastLocation(GoogleApiClient var1);
+}
