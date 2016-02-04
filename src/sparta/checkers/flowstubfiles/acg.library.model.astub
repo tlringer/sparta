@@ -2,6 +2,9 @@ package com.acg.lib.model;
 
 public final class Location {
 
+    @Source({ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION})
+    public Location(android.location.Location location);
+
     @Source(value = "ACG(location)")
     public double getLatitude();
 
