@@ -1,0 +1,16 @@
+package com.google.common.base;
+
+class Optional<T> implements Serializable {
+
+  <T> Optional<T> absent();
+
+  <T> Optional<T> of(T reference);
+
+  <T> Optional<T> fromNullable(@Nullable T nullableReference);
+
+  Optional() {}
+
+  boolean isPresent();
+
+  T get();
+}
