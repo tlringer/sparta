@@ -1354,6 +1354,7 @@ class TreeMap<K, V> extends AbstractMap<K,V> implements NavigableMap<K,V>, Clone
 
 class UUID{
     static UUID fromString(String arg0);
+    static UUID randomUUID();
 }
 
 @PolyFlowReceiver
