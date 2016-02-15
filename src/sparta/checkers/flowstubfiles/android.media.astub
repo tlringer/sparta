@@ -181,19 +181,19 @@ class MediaPlayer {
         void pause() throws IllegalStateException;
         void setOnPreparedListener(OnPreparedListener listener);
         void setLooping(boolean arg0);
-        void setDataSource(String arg0) throws IOException,IllegalArgumentException,SecurityException,IllegalStateException;
+        void setDataSource(@Sink(SPEAKER) String arg0) throws IOException,IllegalArgumentException,SecurityException,IllegalStateException;
         void start() throws IllegalStateException;
         void prepare() throws IOException,IllegalStateException;
         MediaPlayer();
-        void setDataSource(Context context, Uri uri) throws IOException,IllegalArgumentException,SecurityException,IllegalStateException;
+        void setDataSource(Context context, @Sink(SPEAKER) Uri uri) throws IOException,IllegalArgumentException,SecurityException,IllegalStateException;
         
         static MediaPlayer create(Context context, int resid);
 static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder);
 static MediaPlayer create(Context context, Uri uri);
 void setAudioStreamType(int arg0);
-void setDataSource(Context context, Uri uri, Map<String,String> headers) throws IOException,IllegalArgumentException,SecurityException,IllegalStateException;
-void setDataSource(FileDescriptor fd, long offset, long length) throws IOException,IllegalArgumentException,IllegalStateException;
-void setDataSource(FileDescriptor fd) throws IOException,IllegalArgumentException,IllegalStateException;
+void setDataSource(Context context, @Sink(SPEAKER) Uri uri, Map<String,String> headers) throws IOException,IllegalArgumentException,SecurityException,IllegalStateException;
+void setDataSource(@Sink(SPEAKER) FileDescriptor fd, long offset, long length) throws IOException,IllegalArgumentException,IllegalStateException;
+void setDataSource(@Sink(SPEAKER) FileDescriptor fd) throws IOException,IllegalArgumentException,IllegalStateException;
 void setOnCompletionListener(OnCompletionListener listener);
 void setOnErrorListener(OnErrorListener listener);
 void setOnInfoListener(OnInfoListener listener);
@@ -265,10 +265,12 @@ void setOnInfoListener(MediaRecorder.OnInfoListener listener);
 void setOrientationHint(int degrees);
 //Sets the orientation hint for output video playback.
 
-void setOutputFile(@Sink({FILESYSTEM, WRITE_EXTERNAL_STORAGE}) FileDescriptor fd);
+@AddsSourceData
+void setOutputFile(@Source(RECORD_AUDIO) @Sink({FILESYSTEM, WRITE_EXTERNAL_STORAGE}) FileDescriptor fd);
 //Pass in the file descriptor of the file to be written.
 
-void setOutputFile(@Sink({FILESYSTEM, WRITE_EXTERNAL_STORAGE}) String path);
+@AddsSourceData
+void setOutputFile(@Source(RECORD_AUDIO) @Sink({FILESYSTEM, WRITE_EXTERNAL_STORAGE}) String path);
 //Sets the path of the output file to be produced.
 
 void setOutputFormat(int output_format);
