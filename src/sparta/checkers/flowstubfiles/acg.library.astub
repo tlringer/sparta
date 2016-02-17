@@ -1,11 +1,11 @@
 package com.acg.lib.impl;
 
-public final class LocationACG extends PermanentAccessACG<Location> implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public final class LocationACG extends NonComposablePermanentAccessACG<Location> implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     @Source(value = "ACG(location)")
     public Location getResource() throws ACGResourceAccessException;
 }
 
-public final class AudioACG extends OneTimeACG<File> {
+public final class AudioACG extends NonComposableOneTimeACG<File> {
     @Source(value = "ACG(audio_recording)")
     public File getResource() throws ACGResourceAccessException;
 }
