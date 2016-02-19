@@ -1,0 +1,7 @@
+package com.acg.lib.listeners;
+
+public class ACGListeners$Builder {
+    public Builder();
+    public ACGListeners build();
+    public <T> Builder withResourceReadyListener(ACG<T> acg, ResourceReadyListener resourceReadyListener);
+}
