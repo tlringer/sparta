@@ -3594,6 +3594,20 @@ class DecelerateInterpolator{
         DecelerateInterpolator(float factor);
 }
 
+class RotateAnimation {
+    RotateAnimation(Context context, AttributeSet attrs);
+    RotateAnimation(float fromDegrees, float toDegrees);
+    RotateAnimation(float fromDegrees, float toDegrees, float pivotX, float pivotY);
+    RotateAnimation(float fromDegrees, float toDegrees, int pivotXType, float pivotXValue, int pivotYType, float pivotYValue);
+}
+
+class LinearInterpolator {
+    LinearInterpolator();
+    public LinearInterpolator(Context context, AttributeSet attrs);
+    public float getInterpolation(float input);
+}
+
+
 package android.view.inputmethod;
 
 class ExtractedText{
