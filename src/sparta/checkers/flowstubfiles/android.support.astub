@@ -1886,8 +1886,12 @@ static void setAutoMirrored(Drawable drawable, boolean mirrored);
 package android.support.v7.app;
 
 class AppCompatActivity {
-
-    AppCompatActivity();
-
-    void onCreate(Bundle savedInstanceState);
+AppCompatActivity();
+void onCreate(Bundle savedInstanceState);
+void setContentView(int layoutResID);
+void setContentView(@Sink(DISPLAY) View view);
+void setContentView(@Sink(DISPLAY) View view, LayoutParams params);
+void addContentView(@Sink(DISPLAY) View view, LayoutParams params);
+ActionBar getSupportActionBar();
+void setSupportActionBar(@sink(DISPLAY) Toolbar toolbar);
 }
