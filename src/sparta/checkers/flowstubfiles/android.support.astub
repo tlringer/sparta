@@ -1881,3 +1881,13 @@ class DrawableCompat {
 static boolean isAutoMirrored(Drawable drawable);
 static void setAutoMirrored(Drawable drawable, boolean mirrored);
 }
+
+
+package android.support.v7.app;
+
+class AppCompatActivity {
+
+    AppCompatActivity();
+
+    void onCreate(Bundle savedInstanceState);
+}

@@ -3111,6 +3111,16 @@ void setStaticTransformationsEnabled(boolean enabled);
 //When this property is set to true, this ViewGroup supports static transformations on children; this causes getChildStaticTransformation(View, android.view.animation.Transformation); to be invoked when a child is drawn.
 }
 
+static class View$DragShadowBuilder {
+
+DragShadowBuilder(View view);
+
+DragShadowBuilder();
+
+final View getView();
+
+}
+
 class ViewParent {
 
  
