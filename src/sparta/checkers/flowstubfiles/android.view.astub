@@ -1040,6 +1040,23 @@ void finalize();
 
 }
 
+class DragEvent {
+    static final @Source(USER_INPUT) int ACTION_DRAG_STARTED;
+    static final @Source(USER_INPUT) int ACTION_DRAG_LOCATION;
+    static final @Source(USER_INPUT) int ACTION_DROP;
+    static final @Source(USER_INPUT) int ACTION_DRAG_ENDED;
+    static final @Source(USER_INPUT) int ACTION_DRAG_ENTERED;
+    static final @Source(USER_INPUT) int ACTION_DRAG_EXITED;
+
+    int getAction();
+
+    float getX();
+
+    float getY();
+
+    final void recycle();
+}
+
 class SubMenu{
         SubMenu setIcon(int arg0);
 }
