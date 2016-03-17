@@ -10,4 +10,16 @@ public final class Location {
 
     @Source(value = "ACG(location)")
     public double getLongitude();
+
+    @Source(value = "ACG(location)")
+    public android.location.Location getLocation();
+
+    @Source(value = "ACG(location)")
+    public float getSpeed();
+
+    @Source(value = "ACG(location)")
+    public long getTime();
+
+    @Source(value = "ACG(location)")
+    public float distanceTo(Location location);
 }
