@@ -6,7 +6,7 @@ public final class LocationACG extends PermanentAccessACG<Location> implements G
 }
 
 public final class UpdateLocationACG extends PermanentAccessACG<Location> implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
-    @Source(value = "ACG(update_location)")
+    @Source(value = "ACG(location)")
     public Location getResource() throws ACGResourceAccessException;
 
     public void setInterval(long interval);
