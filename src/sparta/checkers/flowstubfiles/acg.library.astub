@@ -5,6 +5,15 @@ public final class LocationACG extends PermanentAccessACG<Location> implements G
     public Location getResource() throws ACGResourceAccessException;
 }
 
+public final class UpdateLocationACG extends PermanentAccessACG<Location> implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+    @Source(value = "ACG(update_location)")
+    public Location getResource() throws ACGResourceAccessException;
+
+    public void setInterval(long interval);
+
+    public void setFastestInterval(long fastestInterval);
+}
+
 public final class AudioACG extends ACG<File> {
     @Source(value = "ACG(audio_recording)") @Sink(value = "FILESYSTEM(/ACG)")
     public File getResource() throws ACGResourceAccessException;
