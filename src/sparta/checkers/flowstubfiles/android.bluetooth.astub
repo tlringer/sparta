@@ -56,4 +56,6 @@ class BluetoothSocket{
 
 class BluetoothClass {
   String toString();
+  int getDeviceClass();
+  int getMajorDeviceClass();
 }

@@ -1,0 +1,7 @@
+package com.google.android.gms.common;
+
+class GooglePlayServicesUtil {
+static Dialog getErrorDialog(int errorCode, Activity activity, int requestCode);
+static Dialog getErrorDialog(int errorCode, Activity activity, int requestCode, OnCancelListener cancelListener);
+static int isGooglePlayServicesAvailable(Context context);
+}

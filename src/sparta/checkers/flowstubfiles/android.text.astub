@@ -237,6 +237,8 @@ static boolean is24HourFormat(Context context);
 static CharSequence format(CharSequence inFormat, Calendar inDate);
 static CharSequence format(CharSequence inFormat, Date inDate);
 static CharSequence format(CharSequence inFormat, long inTimeInMillis);
+static java.text.DateFormat getMediumDateFormat(Context context);
+static java.text.DateFormat getTimeFormat(Context context);
 }
 
 class DateUtils{
