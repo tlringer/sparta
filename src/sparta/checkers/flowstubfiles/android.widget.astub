@@ -1824,6 +1824,8 @@ synchronized void setMax(@Sink(DISPLAY) int max);
 synchronized void setProgress(@Sink(DISPLAY) int progress);
 //Set the current progress to the specified value.
 
+synchronized boolean setProgress(int progress, boolean fromUser);
+
 void setProgressDrawable(@Sink(DISPLAY) Drawable d);
 //Define the drawable used to draw the progress bar in progress mode.
 

@@ -20,7 +20,7 @@ function downloadJars {
 	echo Downloading Dare
 	echo ===========================================
 	if [[ "$OSTYPE" == "linux-gnu" ]]; then
-		curl -o dare.tgz -L https://siis.cse.psu.edu/dare/downloads/dare-1.0.2_2-linux.tgz
+		curl -o dare.tgz -L http://siis.cse.psu.edu/dare/downloads/dare-1.0.2_2-linux.tgz
 		tar zxvf dare.tgz -C dare/
 		cp -R dare/dare-1.0.2_2-linux/. dare/ 
 		rm -rf dare/dare-1.0.2_2-linux/*
@@ -79,16 +79,16 @@ fi
 #Building target app
 APP_DIR=$1
 cd $APP_DIR
-FINDMANIFEST='find `pwd` -name 'AndroidManifest.xml' | head -1'
-MANIFESTFOLDER=$(dirname $(eval $FINDMANIFEST))
-cd $MANIFESTFOLDER
+#FINDMANIFEST='find `pwd` -name 'AndroidManifest.xml' | head -1'
+#MANIFESTFOLDER=$(dirname $(eval $FINDMANIFEST))
+#cd $MANIFESTFOLDER
 mkdir -p libs
 rm -f libs/sparta.jar
-cp $SPARTA_CODE/sparta.jar libs/sparta.jar
-ant debug
+#cp $SPARTA_CODE/sparta.jar libs/sparta.jar
+./gradlew build
 
 #Target app's apk path
-FINDAPK='find `pwd`/bin -name '*-debug.apk' | head -1'
+FINDAPK='find `pwd` -name '*-debug.apk' | head -1'
 APKPATH=$(eval $FINDAPK)
 
 #Output directory
@@ -117,10 +117,10 @@ fi
 generateFilters "$APKPATH" "${@:2}"
 
 #Using DARE
-./download-libs/dare/dare -d ../epicc/ "$APKPATH"
+./download-libs/dare/dare -d ./download-libs/epicc/ "$APKPATH"
 
 #Using Epicc
-java -Xmx1024M -jar ./download-libs/epicc/epicc-0.1.jar -apk "$APKPATH" -android-directory "$RETARGETEDPATH" -cp ./download-libs/epicc/android.jar icc-study "$OUTDIR" > "$EPICCOUTPUT"
+java -Xmx2048M -jar ./download-libs/epicc/epicc-0.1.jar -apk "$APKPATH" -android-directory "$RETARGETEDPATH" -cp ./download-libs/epicc/android.jar icc-study "$OUTDIR" > "$EPICCOUTPUT"
 #Epicc output generated. Removing unnecessary data.
 rm -rf ./download-libs/epicc/retargeted/*
 rm -rf ./download-libs/epicc/optmized/*
