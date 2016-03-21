@@ -1,0 +1,72 @@
+package com.google.android.gms.maps;
+
+public final class GoogleMap {
+    public static final int MAP_TYPE_NONE = 0;
+    public static final int MAP_TYPE_NORMAL = 1;
+    public static final int MAP_TYPE_SATELLITE = 2;
+    public static final int MAP_TYPE_TERRAIN = 3;
+    public static final int MAP_TYPE_HYBRID = 4;
+
+    public final Polyline addPolyline(@Sink(DISPLAY) PolylineOptions options);
+    public final Polygon addPolygon(@Sink(DISPLAY) PolygonOptions options);
+    public final Circle addCircle(@Sink(DISPLAY) CircleOptions options);
+    public final Marker addMarker(@Sink(DISPLAY) MarkerOptions options);
+    public final GroundOverlay addGroundOverlay(@Sink(DISPLAY) GroundOverlayOptions options);
+    public final TileOverlay addTileOverlay(@Sink(DISPLAY) TileOverlayOptions options);
+    public final int getMapType();
+    public final boolean isTrafficEnabled();
+    public final void moveCamera(@Sink(DISPLAY) CameraUpdate update);
+}
+
+public class SupportMapFragment extends Fragment {
+    public static SupportMapFragment newInstance();
+    public static SupportMapFragment newInstance(GoogleMapOptions options);
+    public SupportMapFragment();
+    public final GoogleMap getMap();
+}
+
+public final class CameraUpdateFactory {
+    public static CameraUpdate zoomIn();
+    public static CameraUpdate zoomOut();
+    public static CameraUpdate scrollBy(float xPixel, float yPixel);
+    public static CameraUpdate zoomTo(float zoom);
+    public static CameraUpdate zoomBy(float amount);
+    public static CameraUpdate zoomBy(float amount, Point focus);
+    public static CameraUpdate newCameraPosition(CameraPosition cameraPosition);
+    public static CameraUpdate newLatLng(LatLng latLng);
+    public static CameraUpdate newLatLngZoom(LatLng latLng, float zoom);
+    public static CameraUpdate newLatLngBounds(LatLngBounds bounds, int padding);
+    public static CameraUpdate newLatLngBounds(LatLngBounds bounds, int width, int height, int padding);
+}
+
+package com.google.android.gms.maps.model;
+
+public final class LatLng implements SafeParcelable {
+    public final double latitude;
+    public final double longitude;
+
+    LatLng(int versionCode, double latitude, double longitude);
+    public LatLng(double latitude, double longitude);
+}
+
+public final class PolylineOptions implements SafeParcelable {
+    public PolylineOptions();
+    PolylineOptions(int versionCode, List points, float width, int color, float zIndex, boolean visible, boolean geodesic, boolean clickable);
+    public PolylineOptions add(LatLng point);
+    public PolylineOptions add(LatLng... points);
+    public PolylineOptions addAll(Iterable<LatLng> points);
+    public PolylineOptions width(float width);
+    public PolylineOptions color(int color);
+    public PolylineOptions zIndex(float zIndex);
+    public PolylineOptions visible(boolean visible);
+    public PolylineOptions geodesic(boolean geodesic);
+    public PolylineOptions clickable(boolean clickable) ;
+    public List<LatLng> getPoints();
+    public float getWidth();
+    public int getColor();
+    public float getZIndex();
+    public boolean isVisible();
+    public boolean isGeodesic();
+    public boolean isClickable();
+}
+
