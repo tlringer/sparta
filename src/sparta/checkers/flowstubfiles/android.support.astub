@@ -1894,4 +1894,5 @@ void setContentView(@Sink(DISPLAY) View view, LayoutParams params);
 void addContentView(@Sink(DISPLAY) View view, LayoutParams params);
 ActionBar getSupportActionBar();
 void setSupportActionBar(@sink(DISPLAY) Toolbar toolbar);
+MenuInflater getMenuInflater();
 }
