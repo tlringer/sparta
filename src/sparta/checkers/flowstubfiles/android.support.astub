@@ -131,6 +131,7 @@ Builder setPriority(int pri);
 Builder setContentIntent(PendingIntent intent);
 Builder(Context context);
 Builder setOngoing(boolean ongoing);
+Builder setWhen(long when);
 }
 
 class NotificationCompat$InboxStyle{
