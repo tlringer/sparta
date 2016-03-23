@@ -1773,7 +1773,7 @@ abstract SharedPreferences.Editor putLong(@Sink(SHARED_PREFERENCES)String key, @
 abstract SharedPreferences.Editor putString(@Sink(SHARED_PREFERENCES) String key, @Sink(SHARED_PREFERENCES) String value);
 //Set a String value in the preferences editor, to be written back once commit(); or apply(); are called.
 
-abstract SharedPreferences.Editor putStringSet(@Sink(SHARED_PREFERENCES)String key, Set<@Sink(SHARED_PREFERENCES)String> values);
+abstract SharedPreferences.Editor putStringSet(@Sink(SHARED_PREFERENCES)String key, @Sink(SHARED_PREFERENCES) Set<@Sink(SHARED_PREFERENCES) String> values);
 //Set a set of String values in the preferences editor, to be written back once commit(); is called.
 
 abstract SharedPreferences.Editor remove(@Sink(SHARED_PREFERENCES)String key);
