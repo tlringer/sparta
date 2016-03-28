@@ -1943,7 +1943,7 @@ class ZipFile{
 }
 
 @PolyFlow
-class Objects {
+public final class Objects {
     static <T> T requireNonNull(T o);
     static <T> T requireNonNull(T o, String message);
 }
