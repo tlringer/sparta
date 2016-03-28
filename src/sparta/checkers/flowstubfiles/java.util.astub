@@ -1941,3 +1941,9 @@ class ZipFile{
         InputStream getInputStream(ZipEntry arg0) throws IOException;
         Enumeration<? extends ZipEntry> entries();
 }
+
+@PolyFlow
+class Objects {
+    static <T> T requireNonNull(T o);
+    static <T> T requireNonNull(T o, String message);
+}
