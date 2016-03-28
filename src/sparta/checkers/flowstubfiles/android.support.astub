@@ -420,6 +420,11 @@ Cursor loadInBackground();
 class ContextCompat {
 static boolean startActivities(Context context, @Sink(INTENT) Intent[] intents);
 static boolean startActivities(Context context, @Sink(INTENT) Intent[] intents, Bundle options);
+static int checkSelfPermission(Context context, String permission);
+}
+
+class ActivityCompat extends ContextCompat {
+
 }
 
 class IntentCompat {
