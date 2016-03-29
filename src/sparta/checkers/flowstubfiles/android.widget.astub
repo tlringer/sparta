@@ -3498,5 +3498,8 @@ void setSize(int width, int height);
     
 }
 
+package android.support.design.widget;
 
-
+class CollapsingToolbarLayout extends FrameLayout {
+void setTitle(@Sink(DISPLAY) CharSequence title);
+}
