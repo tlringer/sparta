@@ -424,7 +424,8 @@ static int checkSelfPermission(Context context, String permission);
 }
 
 class ActivityCompat extends ContextCompat {
-
+// not sure if this is annotated correctly; this is a weird method (displays permissions prompt to user)
+static void requestPermissions(Activity activity, @Sink(DISPLAY) String[] permissions, final int requestCode);
 }
 
 class IntentCompat {
