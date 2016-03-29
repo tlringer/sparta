@@ -88,7 +88,7 @@ rm -f libs/sparta.jar
 ./gradlew build
 
 #Target app's apk path
-FINDAPK='find `pwd` -name '*-debug.apk' | head -1'
+FINDAPK='find `pwd` -name '*-release-unsigned.apk' | head -1'
 APKPATH=$(eval $FINDAPK)
 
 #Output directory
@@ -119,12 +119,18 @@ generateFilters "$APKPATH" "${@:2}"
 #Using DARE
 ./download-libs/dare/dare -d ./download-libs/epicc/ "$APKPATH"
 
+echo "Using Epicc"
+echo "java -Xmx6g -jar ./download-libs/epicc/epicc-0.1.jar -apk" "$APKPATH" "-android-directory" "$RETARGETEDPATH" "-cp ./download-libs/epicc/android.jar icc-study" "$OUTDIR" ">" "$EPICCOUTPUT"
+
 #Using Epicc
-java -Xmx2048M -jar ./download-libs/epicc/epicc-0.1.jar -apk "$APKPATH" -android-directory "$RETARGETEDPATH" -cp ./download-libs/epicc/android.jar icc-study "$OUTDIR" > "$EPICCOUTPUT"
+java -Xmx6g -jar ./download-libs/epicc/epicc-0.1.jar -apk "$APKPATH" -android-directory "$RETARGETEDPATH" -cp ./download-libs/epicc/android.jar icc-study "$OUTDIR" > "$EPICCOUTPUT"
 #Epicc output generated. Removing unnecessary data.
 rm -rf ./download-libs/epicc/retargeted/*
 rm -rf ./download-libs/epicc/optmized/*
 rm -rf ./download-libs/epicc/optimized-decompiled/*
+
+echo "Processing epicc output"
+echo "java -Xmx1024M -cp build/ sparta.checkers.intents.componentmap.ProcessEpicOutput" "$EPICCOUTPUT" "$FILTERSMAP" "$CMPATH"
 
 #Processing epicc output with filters
 java -Xmx1024M -cp build/ sparta.checkers.intents.componentmap.ProcessEpicOutput "$EPICCOUTPUT" "$FILTERSMAP" "$CMPATH"
