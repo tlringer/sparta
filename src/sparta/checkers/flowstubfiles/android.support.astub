@@ -290,6 +290,7 @@ class Fragment{
         View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
         void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo);
         void onAttach(Activity activity);
+        String getString(int resId);
         String getString(int resId, @Source() @Sink(ANY) Object @Source() @Sink(ANY) [] formatArgs);
         void registerForContextMenu(View view);
         void onCreateOptionsMenu(Menu menu, MenuInflater inflater);
