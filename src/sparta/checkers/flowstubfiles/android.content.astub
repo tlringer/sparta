@@ -2009,6 +2009,9 @@ DisplayMetrics getDisplayMetrics();
  Drawable getDrawable(int id);
 //Return a drawable object associated with a particular resource ID.
 
+Drawable getDrawable(int id, Resources.Theme theme);
+//Return a drawable object associated with a particular resource ID and styled for the specified theme
+
  Drawable getDrawableForDensity(int id, int density);
 //Return a drawable object associated with a particular resource ID for the given screen density in DPI.
 
