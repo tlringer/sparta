@@ -358,6 +358,8 @@ Fragment getFragment(Bundle arg0, String arg1);
 
 Fragment findFragmentById(int arg0);
 
+List<Fragment> getFragments();
+
 //int commit();
 
 //FragmentTransaction add(Fragment arg0, String arg1);
