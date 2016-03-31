@@ -3503,3 +3503,10 @@ package android.support.design.widget;
 class CollapsingToolbarLayout extends FrameLayout {
 void setTitle(@Sink(DISPLAY) CharSequence title);
 }
+
+package android.support.v7.widget;
+
+class RecyclerView extends ViewGroup implements ScrollingView, NestedScrollingChild {
+void setAdapter(Adapter adapter);
+Adapter getAdapter();
+}
