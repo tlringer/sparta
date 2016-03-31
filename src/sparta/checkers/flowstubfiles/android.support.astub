@@ -1914,4 +1914,5 @@ ActionBar getSupportActionBar();
 void setSupportActionBar(@sink(DISPLAY) Toolbar toolbar);
 MenuInflater getMenuInflater();
 void onSaveInstanceState(Bundle outState);
+void onConfigurationChanged(Configuration newConfig);
 }
