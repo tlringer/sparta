@@ -294,6 +294,7 @@ class Fragment{
         void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo);
         void onAttach(Activity activity);
         String getString(int resId);
+        @PolyFlow
         String getString(int resId, @PolySource @PolySink Object ... formatArgs);
         void registerForContextMenu(View view);
         void onCreateOptionsMenu(Menu menu, MenuInflater inflater);
