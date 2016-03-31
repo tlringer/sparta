@@ -391,6 +391,10 @@ class ActivityCompat extends ContextCompat {
 static void requestPermissions(Activity activity, @Sink(DISPLAY) String[] permissions, final int requestCode);
 }
 
+interface ActivityCompat$OnRequestPermissionsResultCallback {
+void onRequestPermissionsResult(int requestCode, String[] permissions,@Source(USER_INPUT) int[] grantResults);
+}
+
 
 package android.support.v4.os;
 
