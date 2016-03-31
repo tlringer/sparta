@@ -259,6 +259,8 @@ class Activity{
 final int RESULT_OK;
 final int RESULT_CANCELED;
 
+void onRequestPermissionsResult(int requestCode, String[] permissions, @Source(USER_INPUT) int[] grantResults);
+
 void dump(String prefix, @Sink({FILESYSTEM, WRITE_EXTERNAL_STORAGE, INTERNET})FileDescriptor fd, PrintWriter writer, String[] args);
 //Print the Fragments's state into the given stream.
 
