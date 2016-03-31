@@ -242,6 +242,9 @@ void onStart();
 
 void onStop();
 //Dispatch onStop(); to all fragments.
+
+void onRequestPermissionsResult(int requestCode, String[] permissions, @Source(USER_INPUT) int[] grantResults);
+//Callback for the result from requesting permissions
 }
 
 class FragmentTabHost {
