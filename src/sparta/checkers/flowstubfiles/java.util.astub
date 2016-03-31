@@ -1413,6 +1413,15 @@ class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Clonea
     Iterator<E> iterator();
 }
 
+public final class Objects {
+    @PolyFlow
+    static <T> T requireNonNull(T o);
+    @PolyFlow
+    static <T> T requireNonNull(T o, String message);
+    static boolean equals(Object a, Object b);
+    static int hash(Object[] values);
+}
+
 package java.util.concurrent;
 
 class Semaphore {
@@ -1942,8 +1951,3 @@ class ZipFile{
         Enumeration<? extends ZipEntry> entries();
 }
 
-@PolyFlow
-public final class Objects {
-    static <T> T requireNonNull(T o);
-    static <T> T requireNonNull(T o, String message);
-}
