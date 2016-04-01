@@ -1436,6 +1436,9 @@ class Executors {
 static ScheduledExecutorService newSingleThreadScheduledExecutor();
 static ExecutorService newFixedThreadPool(int arg0, ThreadFactory arg1);
 static ExecutorService newFixedThreadPool(int arg0);
+static ScheduledExecutorService newScheduledThreadPool(int corePoolSize);
+static ScheduledExecutorService newScheduledThreadPool(int corePoolSize, ThreadFactory threadFactory);
+static ExecutorService unconfigurableExecutorService(ExecutorService executor);
 }
 
 class CopyOnWriteArrayList {
