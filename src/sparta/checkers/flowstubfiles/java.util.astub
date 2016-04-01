@@ -1643,6 +1643,26 @@ class LinkedBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E
 }
 
 @PolyFlowReceiver
+class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
+    ArrayBlockingQueue(int capacity);
+    ArrayBlockingQueue(int capacity, boolean fair);
+    ArrayBlockingQueue(int capacity, boolean fair, Collection<? extends E> c);
+    int size();
+    int remainingCapacity();
+    boolean add(E arg0);
+    boolean offer(E arg0);
+    void put(E arg0) throws InterruptedException;
+    boolean offer(E arg0, long arg1, TimeUnit arg2) throws InterruptedException;
+    E take() throws InterruptedException;
+    E poll(long arg0, TimeUnit arg1) throws InterruptedException;
+    int remainingCapacity();
+    boolean remove(Object arg0);
+    boolean contains(Object arg0);
+    int drainTo(Collection<? super E> arg0);
+    int drainTo(Collection<? super E> arg0, int arg1);
+}
+
+@PolyFlowReceiver
 interface ScheduledExecutorService extends ExecutorService {
     ScheduledFuture<?> schedule(Runnable arg0, long arg1, TimeUnit arg2);
     <V> ScheduledFuture<V> schedule(Callable<V> arg0, long arg1, TimeUnit arg2);
