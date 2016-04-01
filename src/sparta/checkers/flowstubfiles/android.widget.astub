@@ -3510,3 +3510,10 @@ class RecyclerView extends ViewGroup implements ScrollingView, NestedScrollingCh
 void setAdapter(Adapter adapter);
 Adapter getAdapter();
 }
+
+class RecyclerView$Adapter<VH extends ViewHolder> {
+void notifyDataSetChanged();
+VH onCreateViewHolder(ViewGroup parent, int viewType);
+void onBindViewHolder(VH holder, int position);
+int getItemCount();
+}
