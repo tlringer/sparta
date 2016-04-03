@@ -40,7 +40,7 @@ class ByteOrder{
 class ByteBuffer extends Buffer implements Comparable<ByteBuffer> {
     static ByteBuffer allocateDirect(int arg0);
     static ByteBuffer allocate(int arg0);
-    static ByteBuffer wrap(byte[] arg0, int arg1, int arg2);
+    static ByteBuffer wrap(@PolySource @PolySink byte[] arg0, int arg1, int arg2);
     static @PolySource @PolySink ByteBuffer wrap(@PolySource @PolySink byte @PolySource @PolySink [] arg0);
     ByteBuffer slice();
     ByteBuffer duplicate();
@@ -163,6 +163,10 @@ class Charset implements Comparable<Charset> {
     int hashCode();
     boolean equals(Object arg0);
     String toString();
+}
+
+abstract class CharsetDecoder {
+    CharBuffer decode(ByteBuffer in) throws CharacterCodingException;
 }
 
 package java.nio.channels;
