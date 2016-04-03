@@ -303,3 +303,10 @@ static void parse(Reader in, ContentHandler contentHandler);
 
 
 }
+
+@PolyFlowReceiver
+class LruCache<K, V> {
+LruCache(int maxSize);
+V put(K key, V value);
+V get(K key);
+}
