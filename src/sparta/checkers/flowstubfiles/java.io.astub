@@ -704,5 +704,7 @@ class StringReader{
             StringReader(String arg0);
 }
 
-
+interface FileFilter {
+    boolean accept(File pathname);
+}
 
