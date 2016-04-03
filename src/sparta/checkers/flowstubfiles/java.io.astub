@@ -305,6 +305,8 @@ class FilterInputStream{
 class IOException{
             IOException(String arg0);
             IOException();
+            IOException(String message, Throwable cause);
+            IOException(Throwable cause);
 }
 class FileReader{
             @Source(FILESYSTEM) FileReader(@Source({FILESYSTEM, READ_EXTERNAL_STORAGE}) File arg0) throws FileNotFoundException;
