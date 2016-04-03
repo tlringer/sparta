@@ -536,6 +536,7 @@ void flushBuilder();
 }
 
 class LruCache {
+LruCache(int maxSize);
 protected void entryRemoved(boolean evicted, K key, V oldValue, V newValue);
 void trimToSize(int maxSize);
 protected int sizeOf(K key, V value);
