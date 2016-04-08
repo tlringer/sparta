@@ -1916,3 +1916,116 @@ MenuInflater getMenuInflater();
 void onSaveInstanceState(Bundle outState);
 void onConfigurationChanged(Configuration newConfig);
 }
+
+class AlertDialog$Builder {
+
+Builder(Context context, int theme);
+
+Builder(Context context);
+
+AlertDialog create();
+//Creates a AlertDialog with the arguments supplied to this builder.
+
+Context getContext();
+//Returns a Context with the appropriate theme for dialogs created by this Builder.
+
+AlertDialog.Builder setAdapter(ListAdapter adapter, DialogInterface.OnClickListener listener);
+//Set a list of items, which are supplied by the given ListAdapter, to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setCancelable(boolean cancelable);
+//Sets whether the dialog is cancelable or not.
+
+AlertDialog.Builder setCursor(Cursor cursor, DialogInterface.OnClickListener listener, String labelColumn);
+//Set a list of items, which are supplied by the given Cursor, to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setCustomTitle(@Sink(DISPLAY) View customTitleView);
+//Set the title using the custom view customTitleView.
+
+AlertDialog.Builder setIcon(@Sink(DISPLAY) Drawable icon);
+//Set the Drawable to be used in the title.
+
+AlertDialog.Builder setIcon(int iconId);
+//Set the resource id of the Drawable to be used in the title.
+
+AlertDialog.Builder setIconAttribute(int attrId);
+//Set an icon as supplied by a theme attribute.
+
+AlertDialog.Builder setInverseBackgroundForced(boolean useInverseBackground);
+//Sets the Dialog to use the inverse background, regardless of what the contents is.
+
+AlertDialog.Builder setItems(int itemsId, DialogInterface.OnClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setItems(@Sink(DISPLAY) CharSequence[] items, DialogInterface.OnClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setMessage(@Sink(DISPLAY) CharSequence message);
+//Set the message to display.
+
+AlertDialog.Builder setMessage(int messageId);
+//Set the message to display using the given resource id.
+
+AlertDialog.Builder setMultiChoiceItems(@Sink(DISPLAY) CharSequence[] items, boolean[] checkedItems, DialogInterface.OnMultiChoiceClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setMultiChoiceItems(@Sink(DISPLAY) Cursor cursor, String isCheckedColumn, String labelColumn, DialogInterface.OnMultiChoiceClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setMultiChoiceItems(int itemsId, boolean[] checkedItems, DialogInterface.OnMultiChoiceClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setNegativeButton(@Sink(DISPLAY) CharSequence text, DialogInterface.OnClickListener listener);
+//Set a listener to be invoked when the negative button of the dialog is pressed.
+
+AlertDialog.Builder setNegativeButton(int textId, DialogInterface.OnClickListener listener);
+//Set a listener to be invoked when the negative button of the dialog is pressed.
+
+AlertDialog.Builder setNeutralButton(int textId, DialogInterface.OnClickListener listener);
+//Set a listener to be invoked when the neutral button of the dialog is pressed.
+
+AlertDialog.Builder setNeutralButton(@Sink(DISPLAY) CharSequence text, DialogInterface.OnClickListener listener);
+//Set a listener to be invoked when the neutral button of the dialog is pressed.
+
+AlertDialog.Builder setOnCancelListener(DialogInterface.OnCancelListener onCancelListener);
+//Sets the callback that will be called if the dialog is canceled.
+
+AlertDialog.Builder setOnDismissListener(DialogInterface.OnDismissListener onDismissListener);
+//Sets the callback that will be called when the dialog is dismissed for any reason.
+
+AlertDialog.Builder setOnItemSelectedListener(AdapterView.OnItemSelectedListener listener);
+//Sets a listener to be invoked when an item in the list is selected.
+
+AlertDialog.Builder setOnKeyListener(DialogInterface.OnKeyListener onKeyListener);
+//Sets the callback that will be called if a key is dispatched to the dialog.
+
+AlertDialog.Builder setPositiveButton(int textId, DialogInterface.OnClickListener listener);
+//Set a listener to be invoked when the positive button of the dialog is pressed.
+
+AlertDialog.Builder setPositiveButton(@Sink(DISPLAY) CharSequence text, DialogInterface.OnClickListener listener);
+//Set a listener to be invoked when the positive button of the dialog is pressed.
+
+AlertDialog.Builder setSingleChoiceItems(@Sink(DISPLAY) CharSequence[] items, int checkedItem, DialogInterface.OnClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setSingleChoiceItems(@Sink(DISPLAY) ListAdapter adapter, int checkedItem, DialogInterface.OnClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setSingleChoiceItems(int itemsId, int checkedItem, DialogInterface.OnClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setSingleChoiceItems(@Sink(DISPLAY) Cursor cursor, int checkedItem, String labelColumn, DialogInterface.OnClickListener listener);
+//Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item via the supplied listener.
+
+AlertDialog.Builder setTitle(@Sink(DISPLAY) CharSequence title);
+//Set the title displayed in the Dialog.
+
+AlertDialog.Builder setTitle(int titleId);
+//Set the title using the given resource id.
+
+AlertDialog.Builder setView(@Sink(DISPLAY) View view);
+//Set a custom view to be the contents of the Dialog.
+
+AlertDialog show()  @Sink(DISPLAY);
+//Creates a AlertDialog with the arguments supplied to this builder and show();'s the dialog.
+
+}
