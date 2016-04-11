@@ -14,6 +14,8 @@ class ContentHandler{
 class URLEncoder {
 @PolyFlow
 static String encode(String arg0);
+@PolyFlow
+static String encode(String s, String charsetName) throws UnsupportedEncodingException;
 }
 
 class URI {
