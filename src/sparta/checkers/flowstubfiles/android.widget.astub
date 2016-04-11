@@ -3518,6 +3518,10 @@ void onBindViewHolder(VH holder, int position);
 int getItemCount();
 }
 
+class RecyclerView$ViewHolder {
+ViewHolder(View itemView);
+}
+
 class LinearLayoutManager extends RecyclerView.LayoutManager implements ItemTouchHelper.ViewDropHandler {
 LinearLayoutManager(Context context);
 }
