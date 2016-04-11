@@ -2030,3 +2030,10 @@ AlertDialog show()  @Sink(DISPLAY);
 //Creates a AlertDialog with the arguments supplied to this builder and show();'s the dialog.
 
 }
+
+package android.support.design.widget;
+
+class Snackbar {
+    static void make(View view, @Sink(DISPLAY) CharSequence text, int duration);
+    static void make(View view, int resId, int duration);
+}
