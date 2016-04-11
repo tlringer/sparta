@@ -1904,18 +1904,36 @@ static void setAutoMirrored(Drawable drawable, boolean mirrored);
 
 package android.support.v7.app;
 
+class ActionBarDrawerToggle {
+ActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout, int openDrawerContentDescRes, int closeDrawerContentDescRes);
+Drawable getThemeUpIndicator();
+void setActionBarDescription(int contentDescRes);
+void setActionBarUpIndicator(Drawable upDrawable, int contentDescRes);
+void syncState();
+void onDrawerClosed(View arg0);
+void onDrawerOpened(View arg0);
+}
+
+class ActionBar {
+void setTitle(@Sink(DISPLAY) CharSequence title);
+}
+
 class AppCompatActivity {
 AppCompatActivity();
-void onCreate(Bundle savedInstanceState);
 void setContentView(int layoutResID);
 void setContentView(@Sink(DISPLAY) View view);
 void setContentView(@Sink(DISPLAY) View view, LayoutParams params);
 void addContentView(@Sink(DISPLAY) View view, LayoutParams params);
-ActionBar getSupportActionBar();
 void setSupportActionBar(@sink(DISPLAY) Toolbar toolbar);
-MenuInflater getMenuInflater();
+void onCreate(Bundle savedInstanceState);
 void onSaveInstanceState(Bundle outState);
 void onConfigurationChanged(Configuration newConfig);
+void onPostCreate(Bundle savedInstanceState);
+boolean onSupportNavigateUp();
+void invalidateOptionsMenu();
+Resources getResources();
+ActionBar getSupportActionBar();
+MenuInflater getMenuInflater();
 }
 
 class AlertDialog$Builder {
